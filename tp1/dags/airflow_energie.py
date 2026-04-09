@@ -23,7 +23,17 @@ default_args = {
     "email_on_failure": False,
     "retries": 2,
     "retry_delay": timedelta(minutes=5),
+    "sla": timedelta(minutes=90),
 }
+def sla_miss_callback(dag, task_list, blocking_task_list, slas, blocking_tis):
+    """
+    Callback appelé quand un SLA miss se produit.
+    Loggue les tâches en retard et simule l'envoi d'une notification.
+    """
+    logging.warning(
+        "[SLA MISS] Les tâches suivantes ont dépassé leur SLA : %s",
+        [t.task_id for t in blocking_task_list]
+    )
 
 
 # --- Fonctions à implémenter (étapes 3 à 7) --
@@ -217,6 +227,7 @@ with DAG(
         start_date=datetime(2024, 1, 1, tzinfo=local_tz),
         catchup=False,
         tags=["rte", "energie", "meteo", "open-data"],
+        sla_miss_callback=sla_miss_callback,
 ) as dag:
     t1 = PythonOperator(
         task_id="verifier_apis",
@@ -237,5 +248,6 @@ with DAG(
     t5 = PythonOperator(
         task_id="generer_rapport_energie",
         python_callable=generer_rapport_energie,
+        sla=timedelta(minutes=45),
     )
     t1 >> [t2, t3] >> t4 >> t5
