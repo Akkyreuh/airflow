@@ -1,0 +1,26 @@
+{"timestamp":"2026-04-08T15:24:08.492345Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":209}
+{"timestamp":"2026-04-08T15:24:08.494298Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/airflow_energie.py","logger":"airflow.dag_processing.dagbag.BundleDagBag","filename":"dagbag.py","lineno":469}
+{"timestamp":"2026-04-08T15:24:08.506597Z","level":"warning","event":"The `airflow.operators.python.PythonOperator` attribute is deprecated. Please use `'airflow.providers.standard.operators.python.PythonOperator'`.","category":"UserWarning","filename":"/opt/airflow/dags/airflow_energie.py","lineno":2,"logger":"py.warnings"}
+{"timestamp":"2026-04-08T15:24:08.537157Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.537697Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.537934Z","level":"info","event":"Current task name:generer_rapport_energie","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.538178Z","level":"info","event":"Dag name:energie_meteo_dag","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.557138Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.557716Z","level":"info","event":"================================================================================","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.558032Z","level":"info","event":"  RAPPORT ENERGIE & METEO — RTE — 2026-04-08","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.558299Z","level":"info","event":"================================================================================","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.558541Z","level":"info","event":"Region                    Soleil (h)  Vent (km/h)  Solaire (MW)  Eolien (MW)   Statut","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.558787Z","level":"info","event":"--------------------------------------------------------------------------------","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.559025Z","level":"info","event":"Occitanie                       12.1         14.3             0            0       OK","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.559294Z","level":"info","event":"Île-de-France                   12.3          6.9             0            0       OK","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.559556Z","level":"info","event":"Hauts-de-France                 12.1         10.1             0            0       OK","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.559879Z","level":"info","event":"Nouvelle-Aquitaine              12.4          9.8             0            0       OK","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.560196Z","level":"info","event":"Auvergne-Rhône-Alpes            12.6          8.4             0            0       OK","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.560427Z","level":"info","event":"================================================================================","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.560645Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.557629Z","level":"info","event":"Rapport sauvegarde : /tmp/rapport_energie_2026-04-08.json","logger":"root","filename":"airflow_energie.py","lineno":207}
+{"timestamp":"2026-04-08T15:24:08.557821Z","level":"info","event":"Done. Returned value was: /tmp/rapport_energie_2026-04-08.json","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":229}
+{"timestamp":"2026-04-08T15:24:08.557998Z","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('019d6db1-7b72-71f7-83ee-1c3c3011363d'), task_id='generer_rapport_energie', dag_id='energie_meteo_dag', run_id='manual__2026-04-08T15:24:01.243898+00:00', try_number=1, dag_version_id=UUID('019d6ca4-8f6a-7cc1-b577-ad64d7f78ca9'), map_index=-1, hostname='3184e5c70db6', context_carrier={'traceparent': '00-1c94942cc49e459bfc4ac49f15d87c59-801df9f235cbdabf-01'}, task=<Task(PythonOperator): generer_rapport_energie>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=2, start_date=datetime.datetime(2026, 4, 8, 15, 24, 8, 52612, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None, sentry_integration='')","logger":"task","filename":"task_runner.py","lineno":1724}
+{"timestamp":"2026-04-08T15:24:08.615386Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.615929Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-04-08T15:24:08.616260Z","level":"info","event":"Task operator:<Task(PythonOperator): generer_rapport_energie>","logger":"task.stdout"}
